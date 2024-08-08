@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Manipulation with JavaScript</title>
+</head>
+<body>
+    <h1>Product Information</h1>
+    <ul id="product-list"></ul>
+    <script>
+
+        let products =[
+            {name: "Laptop", price: 999.99, description:"Powerful computing on the go"},
+            {name: "Smartphone", price: 699.99, description: "Stay connected whereever you are"},
+            {name: "Headphones", price: 149.99, description: "Immersive audio experience"},
+        ];
+
+        function displayProducts(){
+            let productList = document.getElementById("product-list");
+
+            products.forEach(product => {
+                let productItem = document.createElement("li");
+                productItem.innerHTML = `<strong>${product.name}:</strong> $${product.price} - ${product.description}`;
+                productList.appendChild(productItem);
+            });
+        }
+
+        window.addEventListener("load", displayProducts);
+    </script>
+    
+</body>
+</html>
